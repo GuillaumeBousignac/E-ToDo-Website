@@ -1,0 +1,36 @@
+{
+  "name": "b-web-101-lyn-1-1-etodo-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script/src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechBachelorPromo2028/B-WEB-101-LYN-1-1-etodo-4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechBachelorPromo2028/B-WEB-101-LYN-1-1-etodo-4/issues"
+  },
+  "homepage": "https://github.com/EpitechBachelorPromo2028/B-WEB-101-LYN-1-1-etodo-4#readme",
+  "dependencies": {
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^5.1.0",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.3.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "hbs": "^4.2.0",
+    "jsonwebtoken":"^9.0.2",
+    "cors": "^2.8.5"
+  }
+}

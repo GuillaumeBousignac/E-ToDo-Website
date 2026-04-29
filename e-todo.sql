@@ -1,0 +1,33 @@
+CREATE DATABASE IF NOT EXISTS appdb
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE appdb;
+
+CREATE TABLE IF NOT EXISTS user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    firstname VARCHAR(100) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS todo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    start_date DATE NOT NULL,
+    end_date DATE NULL,
+    status ENUM('todo', 'inprogress', 'done')
+        NOT NULL DEFAULT 'todo',
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;

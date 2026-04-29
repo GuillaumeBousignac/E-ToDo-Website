@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" rel="stylesheet" href="/css/login.css"/>
+    <title>E-ToDo Website - Register</title>
+</head>
+<body>
+    <div class="container">
+        <form id="register-form" class="card">
+            <h2>REGISTER</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Your Name">
+
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" required placeholder="Your Firstname">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required placeholder="example@email.com">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required placeholder="Your Password">
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" required placeholder="Confirm your Password">
+
+            <button type="submit">Sign In</button>
+
+            <p class="register-text">
+                Already signed in ?
+                <a href="/login.html">Login</a>
+            </p>
+
+        </form>
+    </div>
+    <script src="/register.js" defer></script>
+</body>
+</html>

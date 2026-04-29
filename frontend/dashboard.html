@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://kit.fontawesome.com/8f9826255d.js" crossorigin="anonymous"></script>
+
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+
+      const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      const theme = stored || system;
+
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link id="stylesheet" rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/colorblind.css">
+
+  <script src="/vendor/fullcalendar/index.global.min.js" defer></script>
+  <script src="/script.js" defer></script>
+
+  <title>E-ToDo Website - Dashboard</title>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Primary">
+    <nav class="sb-nav">
+      <button class="sb-btn active" title="Calendar">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span class="sb-label">Calendar</span>
+      </button>
+      <a class="sb-btn" href="/tasks.html" title="Tasks">
+        <i class="fa-solid fa-list-check"></i>
+        <span class="sb-label">Tasks</span>
+      </a>
+    </nav>
+  </aside>
+
+  <header>
+    <div class="header-title">
+      <h1>E-ToDo Website</h1>
+      <h2>Organization is the Key.</h2>
+    </div>
+
+    <nav class="header-actions" aria-label="Quick actions">
+      <button id="theme-toggle" class="icon-btn" title="Change Theme">
+        <i id="theme-icon" class="fa-solid fa-sun"></i>
+      </button>
+
+      <a id="btn-user" class="icon-btn" href="/login.html" title="Change User">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span class="sr-only">Profile</span>
+      </a>
+
+      <button id="btn-disco" class="icon-btn" title="Disconnect">
+        <i class="fa-solid fa-right-to-bracket"></i>
+      </button>
+    </nav>
+  </header>
+
+  <div id="div-content">
+    <h3>Welcome<span class="user-color"></span></h3>
+
+      <section class="dash-grid">
+        <article class="card kpi">
+          <div class="kpi-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="kpi-meta">
+            <h4>Tasks today</h4>
+            <p><span id="kpi-today">0</span></p>
+          </div>
+        </article>
+
+        <article class="card kpi">
+          <div class="kpi-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div class="kpi-meta">
+            <h4>This week</h4>
+            <p><span id="kpi-week">0</span></p>
+          </div>
+        </article>
+
+        <article class="card kpi">
+
+          <div class="kpi-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="kpi-meta">
+            <h4>Completed</h4>
+            <p><span id="stat-done">0</span></p>
+          </div>
+        </article>
+      </section>
+
+    <div id="calendar" class="card stretch"></div>
+
+    <dialog id="event-modal">
+    <form id="event-form" method="dialog">
+      <h3>New Task</h3>
+
+      <label>
+        Title
+        <input id="evt-title" type="text" required>
+      </label>
+
+      <label>
+        Start Date
+        <input id="evt-start-date" type="date" required>
+      </label>
+
+      <label>
+        End Date
+        <input id="evt-end-date" type="date">
+      </label>
+
+      <label>
+        Status
+        <select id="evt-status" required>
+          <option value="todo">To do</option>
+          <option value="inprogress">In progress</option>
+          <option value="done">Done</option>
+        </select>
+      </label>
+
+      <menu class="modal-actions">
+        <button id="evt-delete" type="button" class="danger" hidden>Delete</button>
+        <button id="evt-cancel" type="button">Cancel</button>
+        <button id="evt-save" type="submit" class="primary">Save</button>
+      </menu>
+    </form>
+  </dialog>
+  </div>
+  <script type="module" src="/dashboard.js"></script>
+  <script src="colorblind.js"></script>
+</body>
+</html>

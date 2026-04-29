@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-sérif;
+  background: #6a5acd;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  min-height: 600px;
+  background: white;
+  padding: 150px 70px;
+  width: 700px;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.12);
+  text-align: left;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  margin-bottom: 25px;
+
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #4169e1;
+}
+
+label {
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.2s;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+input.focus {
+  border-color: #6b5bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(130,120,255,0.25)
+}
+
+button {
+  width: 100%;
+  padding: 12px 14px;
+  background: #6f57e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: background  0.2s;
+  margin-bottom: 50px;
+}
+
+.button.hover {
+  background: #5b4ec4;
+}
+
+.register-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-text a {
+  color: #6a5acd;
+  text-decoration: none;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.register-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.register-btn.hover {
+  background-color: #43A047;
+}

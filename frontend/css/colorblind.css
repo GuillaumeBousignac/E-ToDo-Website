@@ -1,0 +1,54 @@
+[data-colorblind="tritanopia"] {
+    --purple: #e07b97;
+    --blue: #009e73;
+    --btn-danger-bg: #d55e00;
+    --btn-danger-border: #b04d00;
+}
+
+.colorblind-notification {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    text-align: center;
+    animation: fadeInOut 0.3s ease-in-out;
+    max-width: fit-content;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#colorblind-toggle.active {
+    border-color: rgba(65, 105, 225, 0.55);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}
+
+[data-colorblind="tritanopia"] .sidebar {
+    background: linear-gradient(180deg, #e07b97, #009e73);
+}
+
+[data-colorblind="tritanopia"] header {
+    background: linear-gradient(90deg, #c9534c, #d55e00);
+}
+
+[data-colorblind="tritanopia"] .sb-btn {
+    color: #fff;
+}
+
+[data-colorblind="tritanopia"] .sb-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

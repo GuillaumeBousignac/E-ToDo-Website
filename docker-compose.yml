@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: nginx:latest
+    container_name: frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    working_dir: /app
+    command: ["npm", "start"]
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=user
+      - DB_PASS=userpassword
+      - DB_NAME=appdb
+      - JWT_SECRET=secret
+      - PORT=5000
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./:/docker-entrypoint-initdb.d
+
+volumes:
+  mysql_data:
